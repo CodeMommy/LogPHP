@@ -1,6 +1,8 @@
 {
     "name": "codemommy/logphp",
-    "version": "0.0.1",
+    "type": "library",
+    "license": "Apache-2.0",
+    "homepage": "http://www.codemommy.com",
     "description": "Log",
     "keywords": [
         "CodeMommy",
@@ -8,8 +10,6 @@
         "Log",
         "PHP"
     ],
-    "license": "Apache 2.0",
-    "homepage": "http://www.codemommy.com",
     "support": {
         "issues": "https://github.com/CodeMommy/LogPHP/issues",
         "source": "https://github.com/CodeMommy/LogPHP"
@@ -17,20 +17,42 @@
     "authors": [
         {
             "name": "Candison November",
+            "role": "Founder",
             "email": "kandisheng@163.com",
             "homepage": "http://www.kandisheng.com"
         }
     ],
     "autoload": {
         "psr-4": {
-            "CodeMommy\\LogPHP\\": "source/"
+            "CodeMommy\\LogPHP\\Library\\": "library",
+            "CodeMommy\\LogPHP\\": [
+                "interface",
+                "class"
+            ]
         }
     },
-    "require-dev": {
-        "phpunit/phpunit": "*"
+    "autoload-dev": {
+        "psr-4": {
+            "CodeMommy\\Test\\": "test",
+            "CodeMommy\\Script\\": "script"
+        }
     },
     "require": {
         "php": ">=5.3.0",
         "monolog/monolog": "1.23.*"
+    },
+    "require-dev": {
+        "CodeMommy/DevelopPHP": "dev-master"
+    },
+    "scripts": {
+        "update-project": "CodeMommy\\DevelopPHP\\UpdateProject::start",
+        "environment": "CodeMommy\\DevelopPHP\\Environment::start",
+        "pdepend": "CodeMommy\\DevelopPHP\\PHPDepend::start",
+        "phpunit": "CodeMommy\\DevelopPHP\\PHPUnit::start",
+        "phpcbf": "CodeMommy\\DevelopPHP\\PHPCodeBeautifierAndFixer::start",
+        "phpcs": "CodeMommy\\DevelopPHP\\PHPCodeSniffer::start",
+        "phpmd": "CodeMommy\\DevelopPHP\\PHPMessDetector::start",
+        "clean": "CodeMommy\\DevelopPHP\\Clean::all",
+        "test": "CodeMommy\\DevelopPHP\\Test::start"
     }
 }

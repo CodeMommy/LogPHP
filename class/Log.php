@@ -19,6 +19,13 @@ class Log implements LogInterface
     private static $config = array();
 
     /**
+     * Log constructor.
+     */
+    public function __construct()
+    {
+    }
+
+    /**
      * Write
      * @param string $name
      * @param string $type
@@ -52,20 +59,15 @@ class Log implements LogInterface
     }
 
     /**
-     * Log constructor.
-     */
-    public function __construct()
-    {
-    }
-
-    /**
      * Add Config
      * @param string $name
      * @param string $filePath
+     * @return bool
      */
     public static function addConfig($name = '', $filePath = 'log.log')
     {
         self::$config[$name] = $filePath;
+        return true;
     }
 
     /**
@@ -79,10 +81,12 @@ class Log implements LogInterface
 
     /**
      * Clear Config
+     * @return bool
      */
     public static function clearConfig()
     {
         self::$config = array();
+        return true;
     }
 
     /**

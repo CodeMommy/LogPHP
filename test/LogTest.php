@@ -9,7 +9,6 @@ declare(strict_types=1);
 
 namespace CodeMommy\Test;
 
-use CodeMommy\DevelopPHP\Library\Config;
 use Exception;
 use CodeMommy\DevelopPHP\PHPUnitBase;
 use CodeMommy\LogPHP\Log;

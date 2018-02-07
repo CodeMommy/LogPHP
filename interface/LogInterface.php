@@ -22,6 +22,7 @@ interface LogInterface
      * Add Config
      * @param string $name
      * @param string $filePath
+     * @return bool
      */
     public static function addConfig($name = '', $filePath = 'log.log');
 
@@ -33,6 +34,7 @@ interface LogInterface
 
     /**
      * Clear Config
+     * @return bool
      */
     public static function clearConfig();
 

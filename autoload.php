@@ -9,10 +9,10 @@ require_once('library/Autoload.php');
 
 use CodeMommy\LogPHP\Library\Autoload;
 
-$autoloaDirectory = array(
+$autoloadDirectory = array(
     'library' => 'CodeMommy\\LogPHP\\Library',
     'interface' => 'CodeMommy\\LogPHP',
     'class' => 'CodeMommy\\LogPHP'
 );
 
-Autoload::directory($autoloaDirectory);
+Autoload::directory($autoloadDirectory);
